@@ -7,44 +7,13 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function my_solution (str) {
-  let result = ''
-  let capitalized_words = []
-  const words = str.split(' ')
-  for (let word of words) {
-    let chars = word.split('')
-    capitalized_words.push(chars[0].toUpperCase() + chars.splice(1, chars.length).join(''))
-  }
 
-  return capitalized_words.join(' ')
-}
-
-function solution_1 (str) {
-  const words = []
-  for (let word of str.split(' ')) {
-    words.push(word[0].toUpperCase() + word.slice(1))
-  }
-
-  return words.join(' ')
-}
-
-function solution_2 (str) {
-  let result = str[0].toUpperCase()
-
-  for (let i = 1; i < str.length ; i++) {
-    if (str[i -1] === ' ') {
-      result += str[i].toUpperCase()
-    } else {
-      result += str[i]
-    }
-  }
-
-  return result
-}
+const MySolution = require('./MySolution')
+// const Solution1 = require('./Solution1')
+// const Solution2 = require('./Solution2')
 
 function capitalize(str) {
-  // return my_solution(str)
-  return solution_1(str)
+  return MySolution(str)
 }
 
 module.exports = capitalize;

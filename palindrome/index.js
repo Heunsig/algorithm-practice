@@ -7,30 +7,14 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function my_solution (str) {
-  let reversed = str.split('').reverse().join('')
-  if (reversed === str) {
-    return true
-  } else {
-    return false
-  }
-}
 
-function solution_1 (str) {
-  let reversed = str.split('').reverse().join('')
-  return reversed === str
-}
+const MySolution = require('./MySolution')
+// const Solution1 = require('./Solution1')
+// const Solution2 = require('./Solution2')
 
-function solution_2 (str) {
-  return str.split('').every((c, i) => {
-    return c === str[str.length - i - 1]
-  })
-}
 
 function palindrome(str) {
-  // return my_solution(str)
-  // return solution_1(str)
-  return solution_2(str)
+  return MySolution(str)
 }
 
 module.exports = palindrome;

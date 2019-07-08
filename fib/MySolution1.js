@@ -1,4 +1,6 @@
-// Normal iltering
+/////////////////////
+// Normal iltering //
+/////////////////////
 function MySolution (n) {
   let previous_number = 0
   let sum = 1

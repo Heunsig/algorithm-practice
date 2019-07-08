@@ -6,37 +6,14 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function my_solution (str) {
-  let result = ''
-  for (let i = 1 ; i <= str.length ; i++) {
-    result += str[str.length - i]
-  }
 
-  return result
-}
-
-function solution_1 (str) {
-  return str.split('').reverse().join('')
-}
-
-function solution_2 (str) {
-  let reversed = ''
-  for (let c of str) {
-    reversed = c + reversed
-  }
-
-  return reversed
-}
-
-function solution_3 (str) {
-  return str.split('').reduce((reversed, c) => c + reversed, '')
-}
+const mySolution = require('./mySolution')
+// const solution1 = require('./solution1')
+// const solution2 = require('./solution2')
+// const solution3 = require('./solution3')
 
 function reverse(str) {
-  // return my_solution(str)
-  // return solution_1(str)
-  // return solution_2(str)
-  return solution_3(str)
+  return mySolution(str)
 }
 
 

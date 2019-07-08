@@ -1,4 +1,6 @@
-// Recursive
+///////////////
+// Recursive //
+///////////////
 function MySolution (n) {
   if (n === 0) {
     return 0

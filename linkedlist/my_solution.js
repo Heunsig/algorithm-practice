@@ -12,11 +12,7 @@ class LinkedList {
   }
 
   insertFirst (data) {
-    if (!this.head) {
-      this.head = new Node(data)
-    } else {
-      this.head = new Node(data, this.head)
-    }
+    this.head = new Node(data, this.head)
   }
 
   size () {

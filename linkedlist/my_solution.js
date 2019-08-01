@@ -126,8 +126,7 @@ class LinkedList {
     const size = this.size()
 
     if (index > size - 1) {
-      // index = size - 1
-      return 'Error'
+      return
     }
 
 

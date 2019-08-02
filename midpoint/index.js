@@ -12,6 +12,11 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+const { LinkedList } = require('./linkedlist')
+const MySolution = require('./MySolution')
+
+function midpoint(list) {
+  return MySolution(list)
+}
 
 module.exports = midpoint;

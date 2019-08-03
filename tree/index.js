@@ -36,9 +36,7 @@ class Tree {
   }
 
   traverseBF (callback) {
-    let result = []
-
-    result[0] = this.root
+    const result = [this.root]
 
     let i = 0
     while (i < result.length) {

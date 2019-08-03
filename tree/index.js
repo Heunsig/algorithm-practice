@@ -38,27 +38,36 @@ class Tree {
 
   traverseBF () {
     let result = []
-    let nodes_have_children = []
+    // let nodes_having_children = []
 
-    function find_children (node) {
-      let arr = []
+    // function find_children (node) {
+    //   let arr = []
 
-      for (let child of node.children) {
-        arr.push(child)
-        if (child.children.length > 0) {
-          nodes_have_children.push(child)
-        }
-      }
+    //   for (let child of node.children) {
+    //     arr.push(child)
+    //     if (child.children.length > 0) {
+    //       nodes_have_children.push(child)
+    //     }
+    //   }
 
-      return arr
-    }
+    //   return arr
+    // }
 
     result[0] = this.root
-    nodes_have_children[0] = this.root
-    
+    // nodes_having_children[0] = this.root
+
     let i = 0
-    while (i < nodes_have_children.length) {
-      result = [...result, ...find_children(nodes_have_children[i])]
+    while (i < result.length) {
+      // console.log
+
+      for (let child of result[i].children) {
+        result.push(child)
+        // if (child.children.length > 0) {
+          // result.push(child)
+        // }
+      }
+
+      // result = [...result, ...find_children(nodes_have_children[i])]
       i++
     }
 
@@ -81,8 +90,6 @@ t.root.children[0].children[1].add('h')
 t.root.children[0].children[2].add('i')
 t.root.children[1].children[0].add('j')
 t.root.children[0].children[1].children[0].add('k')
-
-
 t.traverseBF();
 
 module.exports = { Tree, Node };

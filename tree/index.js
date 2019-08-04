@@ -40,15 +40,13 @@ class Tree {
 
     let i = 0
     while (i < result.length) {
+      callback(result[i])
+      
       for (let child of result[i].children) {
         result.push(child)
       }
 
       i++
-    }
-
-    for (let node of result) {
-      callback(node)
     }
   }
 

@@ -52,40 +52,20 @@ class Tree {
     }
   }
 
-  traverseDF () {
+  traverseDF (callback) {
     let arr = [this.root]
 
-    let i = 0
-    while (i < arr.length) {
-      let node = arr[i]
+    while (arr.length) {
+      let node = arr.shift()
+      callback(node)
 
       if (node.children.length) {
-        arr.splice(arr.indexOf(node) + 1, 0, ...node.children)
+        arr.splice(0, 0, ...node.children)
       }
-
-      i++
-
     }
-
-    console.log(arr)
-
+    
   }
 
 }
-
-const letters = [];
-const t = new Tree();
-t.root = new Node('20');
-t.root.add('0');
-t.root.add('40');
-t.root.add('-15');
-t.root.children[0].add('12')
-t.root.children[0].add('-2')
-t.root.children[0].add('1')
-t.root.children[2].add('-2')
-// t.root.children[0].add('c');
-
-t.traverseDF()
-
 
 module.exports = { Tree, Node };

@@ -42,16 +42,4 @@ function levelWidth(root) {
   return result
 }
 
-// const root = new Node(0);
-// root.add(1);
-// root.add(2);
-// root.add(3);
-// root.children[0].add(4);
-// root.children[2].add(5);
-// root.children[1].add(6);
-// root.children[2].children[0].add(7);
-// // root.children[2].children[0].add(8);
-// root.children[2].children[0].add(9);
-// levelWidth(root)
-
 module.exports = levelWidth;

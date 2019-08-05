@@ -10,14 +10,10 @@
 // |       |
 // 4       5
 // Answer: [1, 3, 2]
-// 
-const Node = require('./node')
-
+ 
 function levelWidth(root) {
-  let result = []
   let arr = [root]
-
-  result.push(arr.length)
+  let result = [arr.length]
 
   while (arr.length) {
     let counter = 0
@@ -30,7 +26,6 @@ function levelWidth(root) {
       arr.push(...node.children)
 
       counterOfPreviousLevel--
-
     }
 
     if (counter) {

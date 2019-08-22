@@ -12,11 +12,22 @@
 //   c.next = b;
 //   circular(l) // true
 
-const { Node, LinkedList } = require('./linkedlist')
-const MySolution = require('./MySolution')
+// const { Node, LinkedList } = require('./linkedlist')
 
 function circular(list) {
-  return MySolution(list)
+  let slow = list.getFirst()
+  let fast = list.getFirst()
+
+  while (fast.next && fast.next.next) {
+    slow = slow.next
+    fast = fast.next.next
+    
+    if (fast === slow) {
+      return true
+    }
+  }
+
+  return false
 }
 
 module.exports = circular;

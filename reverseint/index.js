@@ -8,14 +8,19 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-
-const MySolution = require('./MySolution')
-// const Solution1 = require('./Solution1')
-// const Solution2 = require('./Solution2')
-
-
 function reverseInt(n) {
-  return MySolution(n)
+  let reversed = ''
+  let stringified_number = n.toString()
+  let sign = ''
+  for (let c of stringified_number) {
+    if (c === '-') {
+      sign = c
+    } else {
+      reversed = c + reversed
+    }
+  }
+
+  return parseInt(sign + reversed)
 }
 
 module.exports = reverseInt;

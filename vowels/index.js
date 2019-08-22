@@ -7,13 +7,9 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-
-const mySolution = require('./mySolution')
-// const solution1 = require('./solution1')
-// const solution2 = require('./solution2')
-
 function vowels(str) {  
-  return mySolution(str)
+  const vowels = str.toLowerCase().match(/[aeiou]/g)
+  return vowels ? vowels.length : 0
 }
 
 module.exports = vowels;

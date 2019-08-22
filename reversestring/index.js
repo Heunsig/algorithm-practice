@@ -6,14 +6,13 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-
-const mySolution = require('./mySolution')
-// const solution1 = require('./solution1')
-// const solution2 = require('./solution2')
-// const solution3 = require('./solution3')
-
 function reverse(str) {
-  return mySolution(str)
+  let result = ''
+  for (let i = 1 ; i <= str.length ; i++) {
+    result += str[str.length - i]
+  }
+
+  return result
 }
 
 

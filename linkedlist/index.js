@@ -3,7 +3,7 @@
 // See 'directions' document
 
 
-// const { Node, LinkedList } = require('./my_solution')
+// const { Node, LinkedList } = require('./MySolution')
 const { Node, LinkedList } = require('./solution')
 
 

@@ -11,11 +11,25 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-const { Node, LinkedList } = require('./linkedlist')
-const MySolution = require('./MySolution')
+// const { Node, LinkedList } = require('./linkedlist')
 
 function fromLast(list, n) {
-  return MySolution(list, n)
+  let slow = list.getFirst()
+  let fast = list.getFirst()
+
+  while (n) {
+    if (fast.next) {
+      fast = fast.next  
+    }
+    n--
+  }
+
+  while (fast.next) {
+    slow = slow.next
+    fast = fast.next
+  }
+
+  return slow
 }
 
 module.exports = fromLast;

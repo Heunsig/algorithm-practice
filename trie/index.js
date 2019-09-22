@@ -1,10 +1,3 @@
-// cat
-// car
-// zebra
-// try
-// trie
-
-
 class Node {
   constructor (value) {
     this.value = value

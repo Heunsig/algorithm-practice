@@ -46,36 +46,6 @@ class Trie {
     cursor.is_last = true
   }
 
-  // findKeysBy (prefix) {
-  //   let cursor = this.root
-  //   const result = []
-  //   const splits = prefix.split('/')
-
-  //   for (let part of splits) {
-  //     let indexOfName = this.findPartNotLast(part, cursor.children)
-  //     if (indexOfName > -1) {
-  //       cursor = cursor.children[indexOfName]
-  //     } else {
-  //       return []
-  //     }
-  //   }
-
-  //   function search (children=null, word='') {
-  //     for (let child of children) {
-  //       if (child.is_last) {
-  //         result.push(word + child.value)
-  //       }
-
-  //       if (child.children.length) {
-  //         search(child.children, word + child.value + '/')
-  //       }
-  //     }
-  //   }
-
-  //   search(cursor.children, '')
-
-  //   return result
-  // }
 
   findKey (key) {
     let cursor = this.root
@@ -118,16 +88,6 @@ class Trie {
 
     return cursor
   }
-
-  // findPart (part, objs) {
-  //   for (let obj of objs) {
-  //     if (obj.value === part && !obj.is_last) {
-  //       return obj
-  //     }
-  //   }
-
-  //   return null
-  // }
 
   findNameNotLast (name, objs) {
     for (let obj of objs) {

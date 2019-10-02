@@ -1,12 +1,13 @@
 class Node {
-  constructor (key, name) {
+  constructor (key=null, name=null, value=null) {
     this.key = key
     this.name = name
+    this.value = value
     this.children = []
     this.is_last = false
   }
 
-  add (key, name) {
+  add (key=null, name=null, value=null) {
     const node = new Node(key, name)
     this.children.push(node)
     return node
@@ -49,7 +50,7 @@ class Trie {
 
   findValueBy (key='') {
     let cursor = this.root
-    const names = key.split('/')
+    const names = key ? key.split('/') : []
 
     for (const [index, name] of names.entries()) {
       if (index === names.length - 1) {
@@ -63,11 +64,13 @@ class Trie {
         return null
       }
     }
+
+    return null
   }
 
   list (key='') {
     let cursor = this.root
-    const names = key.split('/')
+    const names = key ? key.split('/') : []
 
     for (let name of names) {
       let child = this.findChildOfName(name, cursor.children)
@@ -94,26 +97,18 @@ class Trie {
 
 const a = new Trie()
 a.addKey('name')
-debugger
 a.addKey('test/name/test')
-debugger
 a.addKey('test/name')
 a.addKey('test/name/test2')
-
-// console.log(a.list('test/name'))
-debugger
 a.addKey('test/name/test2')
 a.addKey('test/age')
 a.addKey('test/address')
-// a.addKey('test/address')
 a.addKey('test/address1/basic')
 a.addKey('test/address1/basic/hi')
 a.addKey('test/address/basic')
 a.addKey('test/address/basic/hi')
 a.addKey('good/address/basic/hi')
 
-// console.log(a.list('test/name'))
-// console.log(a.findKeysBy('test/address1'))
-// console.log(a.findValueBy(''))
-// console.log(a.list('test/address1'))
+console.log(a.list())
+// console.log(a.findValueBy('name'))
 // console.log(a.list('test/name'))
